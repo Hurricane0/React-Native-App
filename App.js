@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Navbar } from './src/components/Navbar';
+import { AddTodo } from './src/components/AddTodo';
 
 export default function App() {
+  const [todos, setTodos] = useState([
+    { id: Date.now().toString(), text: 'First todo', completed: false },
+  ]);
+
+  const addTodo = text => {
+    alert(text);
+  };
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>My first React Native app!</Text>
+    <View>
+      <Navbar title="Todo" />
+      <View style={styles.container}>
+        <AddTodo addTodo={addTodo} />
+        <TodoList todos={todos} />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 24,
+    paddingHorizontal: 30,
+    paddingVertical: 20,
   },
 });
