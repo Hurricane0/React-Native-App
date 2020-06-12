@@ -1,14 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, Button, Text } from 'react-native';
 
-export const TodoList = ({ todos }) => {
+export const TodoItem = ({ todos }) => {
   return (
-    <View>
-      {todos.map(todo => (
-        <View key={todo.id}>
-          <Text>{todo.text}</Text>
-        </View>
-      ))}
+    <View key={todo.id}>
+      <Text>{todo.text}</Text>
     </View>
   );
 };
