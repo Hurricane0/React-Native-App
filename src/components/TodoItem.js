@@ -1,20 +1,27 @@
 import React from 'react';
 import { View, StyleSheet, Button, Text } from 'react-native';
 
-export const TodoItem = ({ todos }) => {
+export const TodoItem = ({ text }) => {
   return (
-    <View key={todo.id}>
-      <Text>{todo.text}</Text>
+    <View style={styles.field}>
+      <View style={styles.wrapper}>
+        <Text>{text}</Text>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  input: {
-    borderBottomColor: '#000',
-    borderBottomWidth: 1,
-    paddingBottom: 5,
-    fontSize: 18,
-    paddingHorizontal: 5,
+  wrapper: {
+    borderColor: '#000',
+    borderWidth: 1,
+    padding: 5,
+    borderRadius: 5,
+  },
+  field: {
+    padding: 5,
+    borderRadius: 10,
+    backgroundColor: '#d9d9d9',
+    marginTop: 10,
   },
 });

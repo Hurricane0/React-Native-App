@@ -1,15 +1,14 @@
 import React from 'react';
-import { View, StyleSheet, Button, Text } from 'react-native';
+import { View, StyleSheet, Button, Text, FlatList } from 'react-native';
+import { TodoItem } from './TodoItem';
 
 export const TodoList = ({ todos }) => {
   return (
-    <View>
-      {todos.map(todo => (
-        <View key={todo.id}>
-          <Text>{todo.text}</Text>
-        </View>
-      ))}
-    </View>
+    <FlatList
+      data={todos}
+      renderItem={({ item }) => <TodoItem text={item.text} />}
+      keyExtractor={todo => todo.id}
+    />
   );
 };
 
