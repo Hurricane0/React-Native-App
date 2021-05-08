@@ -1,2 +1,2 @@
 # React-Native-App
-Simple application created using React Native.
+Simple application created using React Native
